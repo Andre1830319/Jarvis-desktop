@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>J.A.R.V.I.S.</title>
+<style>
+  html,body{margin:0;height:100%;background:#05070b;color:#5ad8ff;font-family:Consolas,monospace;
+    display:flex;align-items:center;justify-content:center;flex-direction:column;letter-spacing:.3em}
+  .ring{width:90px;height:90px;border-radius:50%;border:2px solid rgba(90,216,255,.25);
+    border-top-color:#5ad8ff;animation:s 1.1s linear infinite;margin-bottom:28px}
+  @keyframes s{to{transform:rotate(360deg)}}
+  small{color:#8fa3b8;letter-spacing:.1em;margin-top:14px;max-width:80%;text-align:center}
+</style></head><body>
+<div class="ring"></div><div>INICIANDO J.A.R.V.I.S.</div><small id="m">Aguardando o núcleo…</small>
+<script>
+  var p = new URLSearchParams(location.search);
+  if (p.get("msg")) document.getElementById("m").textContent = p.get("msg");
+</script></body></html>

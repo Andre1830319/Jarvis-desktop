@@ -1,0 +1,35 @@
+{
+  "name": "jarvis-desktop",
+  "productName": "JARVIS",
+  "version": "1.0.0",
+  "description": "Janela desktop (Electron) para o assistente JARVIS em Python",
+  "main": "main.js",
+  "author": "JARVIS",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "local.jarvis.desktop",
+    "productName": "JARVIS",
+    "files": ["main.js", "preload.js", "loading.html", "build/tray.png"],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "JARVIS"
+    }
+  }
+}
